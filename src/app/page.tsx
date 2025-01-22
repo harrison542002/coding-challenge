@@ -1,5 +1,9 @@
 "use client";
+import GameServerCard from "@/app/components/GameServerCard";
+import ModeToggler from "@/app/components/ModeToggler";
+import { GameServer } from "@/app/types/GameServerType";
 import { useEffect, useState } from "react";
+import { MdDarkMode } from "react-icons/md";
 
 /*
   Welcome to the simplegamehosting coding assignment!
@@ -18,7 +22,7 @@ import { useEffect, useState } from "react";
 */
 
 export default function Home() {
-  const [serverData, setServerData] = useState(null);
+  const [serverData, setServerData] = useState<null | GameServer[]>(null);
   // you can update this fetching code if required but it's not necessary for the assignment.
   useEffect(() => {
     const fetchServerData = async () => {
@@ -35,19 +39,32 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {/* main can be deleted and replaced with your own cards */}
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-2xl font-bold">Minecraft Server List</h1>
-        <p className="text-gray-600">
-          Below is the JSON data fetched from <code>/api/mock</code>. Use it to
-          build the UI.
-        </p>
-        <pre className="bg-gray-200 text-gray-800 p-4 rounded-lg w-full overflow-auto max-w-4xl text-sm">
-          {serverData ? JSON.stringify(serverData, null, 2) : "Loading data..."}
-        </pre>
-      </main>
-      {/* main can be deleted and replaced with your own cards */}
+    <div className="mx-[5px] md:mx-[8px] lg:mx-[52px] mt-4">
+      <div className="flex justify-end w-full">
+        <ModeToggler />
+      </div>
+      <h1 className="text-4xl font-bold text-center">Minecraft Servers</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-4">
+        {/**Server Card List */}
+        {serverData ? (
+          serverData.map((gameServer) => (
+            <GameServerCard key={gameServer.id} {...gameServer} />
+          ))
+        ) : (
+          <>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+            <div className="w-full h-[220px] dark:bg-gray-900 bg-gray-100 animate-pulse rounded-lg"></div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
