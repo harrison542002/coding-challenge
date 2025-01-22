@@ -4,6 +4,14 @@ I have coded a list of dynamic game server card list by following assessment cri
 
 ---
 
+# Features
+
+- Reusable GameServerCard component by following React best practice.
+- Styling component with TailwindCSS by following TailwindCSS best practice (color variables).
+- Responsive on desktop, tablet, phone.
+- Light/dark mode toggle.
+- Interactive "Start/Stop Server" button to change the status of server.
+
 ### Tech Stack
 
 React, Next.JS, TailwindCSS, React-Icons, Next-Themes
@@ -26,11 +34,3 @@ React, Next.JS, TailwindCSS, React-Icons, Next-Themes
    npm run dev
    ```
 4. Open your browser at http://localhost:3000 to view the project.
-
-# Features
-
-- Reusable GameServerCard component by following React best practice.
-- Styling component with TailwindCSS by following TailwindCSS best practice (color variables).
-- Responsive on desktop, tablet, phone.
-- Light/dark mode toggle.
-- Interactive "Start/Stop Server" button to change the status of server.
