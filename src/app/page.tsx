@@ -3,7 +3,6 @@ import GameServerCard from "@/app/components/GameServerCard";
 import ModeToggler from "@/app/components/ModeToggler";
 import { GameServer } from "@/app/types/GameServerType";
 import { useEffect, useState } from "react";
-import { MdDarkMode } from "react-icons/md";
 
 /*
   Welcome to the simplegamehosting coding assignment!
