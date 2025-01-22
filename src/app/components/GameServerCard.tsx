@@ -9,7 +9,7 @@ import { GameServer } from "@/app/types/GameServerType";
 const Mod = ({ mod }: { mod: string }) => (
   <span
     key={mod}
-    className="rounded-xl mr-1 mb-1 inline-block bg-secondary border-accent border text-accent px-2 py-1"
+    className="rounded-xl text-sm mr-1 mb-1 inline-block bg-secondary border-accent border text-accent px-2 py-1"
   >
     {mod}
   </span>
@@ -25,7 +25,7 @@ const GameServerCard = (gameServer: GameServer) => {
 
   return (
     <div>
-      <div className="bg-primary border dark:border-0 shadow p-4 rounded-lg">
+      <div className="bg-primary border dark:border-0 shadow p-4 rounded-lg  transition-all hover:translate-y-2 duration-100">
         <span
           className={`p-1 text-sm rounded capitalize transition-all duration-75 ${
             serverStatus === "online"
